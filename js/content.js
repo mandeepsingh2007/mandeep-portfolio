@@ -1,0 +1,278 @@
+/**
+ * Mandeep's Resume & Portfolio Content Data Structure
+ * Sourced directly from Mandeep Singh's Official Resume
+ */
+
+const portfolioData = {
+    education: [
+        {
+            degree: "B.Tech in Computer Science & Engineering (AIML)",
+            institution: "Guru Tegh Bahadur Institute Of Technology (GTBIT), New Delhi, India",
+            period: "2024 - 2028",
+            score: "CGPA: 8.5 / 10.0",
+            description: "Specializing in Artificial Intelligence, Machine Learning, Deep Learning, Data Structures & Algorithms, Neural Networks, and Software Architecture."
+        }
+    ],
+
+    experience: [
+        {
+            role: "Generative AI Engineer Intern",
+            company: "LawVriksh",
+            period: "February 2026 – Present",
+            location: "",
+            points: [
+                "Developed a Neural text transformation service preserving Markdown structure via sentence-level chunking and reconstruction, with both REST and gRPC interfaces.",
+                "Engineered a rephraser pipeline using Groq LLM and plagiarism-check integration, reducing plagiarism scores from 90% to 0% in 2.47s with automated safe fallback logic.",
+                "Engineered Context Router Pipeline using intelligent orchestration to dynamically integrate multi-section document context, enhancing the quality of AI-generated legal arguments.",
+                "Built AI Humanizer service leveraging LLMs to naturalize generated legal content, improving readability and user engagement.",
+                "Engineered a production-grade Citation Engine using Python/FastAPI and InLegalBERT, implementing semantic search and real-time verification of legal sources.",
+                "Developed an interactive Citation Map to visualize complex legal relationships, building the testing interface in React with NLP-based extraction and dynamic SVG rendering."
+            ]
+        },
+        {
+            role: "Open Source Contributor",
+            company: "Kornia Geometric Computer Vision (Spatial AI)",
+            period: "",
+            location: "",
+            githubLink: "https://github.com/kornia/kornia/pulls?q=is%3Apr+is%3Aclosed+author%3Amandeepsingh2007",
+            points: [
+                "Contributed Naflex feature for SigLIP2 model, successfully merged PR enhancing vision-language capabilities.",
+                "Developing native PyTorch implementation of PaliGemma model with Hugging Face weight loading support stored in Supabase."
+            ]
+        }
+    ],
+
+    projects: [
+        {
+            title: "VEXA - Multi-Agent Vehicle Health System",
+            category: "Agentic AI & Telemetry Platform",
+            tech: ["React.js", "FastAPI", "LangChain", "OmniDimension API", "Vector Search", "Python"],
+            description: "Multi-role real-time vehicle telemetry and fleet analytics platform powered by multi-agent AI (UEBA Security, Scheduling, Voice Call Agent) and natural language failure root-cause analysis.",
+            liveLink: "https://youtu.be/_G5IjEPWOuI?si=Fi5HTDLCe-sD5y9l"
+        },
+        {
+            title: "Multi-Modal Document Intelligence",
+            category: "Generative AI & Agentic Systems",
+            tech: ["Python", "FastAPI", "YOLO", "EasyOCR", "LangChain", "Qdrant VectorDB", "GPT-4o"],
+            description: "4-Agent cross-modal document intelligence pipeline (Vision, Text, Fusion, Validation) with Qdrant VectorDB RAG achieving 92% extraction accuracy and reducing processing time by 85%.",
+            githubLink: "https://github.com/mandeepsingh2007/Multi-Modal-Document-Intelligence-System"
+        },
+        {
+            title: "Vyapaar Saathi - WhatsApp AI for Microentrepreneurs",
+            category: "Conversational AI & FinTech",
+            tech: ["WhatsApp API", "NLP", "DuckDuckGo API", "Google Maps API", "ML Inventory", "Node.js", "Python"],
+            description: "Conversational AI on WhatsApp delivering business intelligence, hyper-local supplier discovery, ML-based predictive inventory, and automated sales/expense bookkeeping empowering 70%+ microentrepreneurs.",
+            liveLink: "https://youtu.be/jtcB_SQLVqs?si=0M6QoCyClcxt37Ex"
+        },
+        {
+            title: "GeoVara - AI Rockfall Prediction & Alert System",
+            category: "IoT & Deep Learning / Early Warning",
+            tech: ["ESP32", "LoRaWAN", "FastAPI", "Node.js", "MongoDB", "MQTT", "CNN+LSTM", "Twilio API", "React.js"],
+            description: "Offline-capable IoT monitoring system using ESP32 and LoRaWAN mesh network with CNN+LSTM risk prediction from geotechnical sensors and drone imagery, triggering real-time SMS alerts via Twilio.",
+            liveLink: "https://youtu.be/U8hIvzPX-8w?si=xPDuIq-WrpOW9YcH"
+        },
+        {
+            title: "Fixera - Bug Bounty Platform",
+            category: "Full Stack / AI & Web Platform",
+            tech: ["React.js", "Node.js", "Express", "MongoDB", "GitHub Webhooks", "ML Models", "UPI Wallet"],
+            description: "Full-stack bug bounty and wallet platform with automated PR verification via GitHub Webhooks, ML-based fair pricing engine, and automated UPI payouts cutting manual verification effort to zero.",
+            liveLink: "https://youtu.be/GJ-MzKwy1pQ?si=WJGwqrJNRoLayF59"
+        }
+    ],
+
+    skills: [
+        {
+            category: "AIML",
+            icon: "fa-brain",
+            items: ["RAG Pipelines", "LLM Integrations", "LangChain", "Agentic AI", "NLP", "Deep Learning", "Machine Learning", "Vector Databases (Qdrant)", "PyTorch"]
+        },
+        {
+            category: "Full Stack Web Development",
+            icon: "fa-layer-group",
+            items: ["React.js", "FastAPI", "Node.js", "Express.js", "MongoDB", "REST APIs", "gRPC", "Git & GitHub"]
+        },
+        {
+            category: "Programming Languages",
+            icon: "fa-code",
+            items: ["Python", "Java"]
+        }
+    ],
+
+    achievements: [
+        {
+            title: "State Level (Top 500) - OpenAI x NxtWave Buildathon",
+            issuer: "OpenAI & NxtWave",
+            date: "National Challenge",
+            certificateLink: "https://drive.google.com/file/d/1t_yzxqm-P2ADb_kMnnZ9oqs8D7mCUp1v/view?usp=sharing",
+            description: "Selected in Top 500 state level out of 70,000+ national participants for building advanced Generative AI applications."
+        },
+        {
+            title: "140+ Problems Solved on LeetCode & Codeforces",
+            issuer: "Competitive Programming",
+            date: "Ongoing",
+            description: "Consistent problem solving in Data Structures, Algorithms, Dynamic Programming, and Graph algorithms."
+        },
+        {
+            title: "3rd Place - Hack7Days Hackathon",
+            issuer: "Hack7Days Challenge",
+            date: "Hackathon Win",
+            certificateLink: "https://drive.google.com/file/d/1XEdgXy543vLv--OZ4BdLzYUG-wNRIZci/view?usp=sharing",
+            description: "Secured 3rd position for developing a high-impact full-stack AI platform during an intensive 7-day sprint."
+        },
+        {
+            title: "Top 5 Finalist - Code With DCG",
+            issuer: "Code With DCG",
+            date: "Finalist",
+            certificateLink: "https://drive.google.com/file/d/1tWMH9-aDO_zE_lxggC_xpYZb4tBHlFXj/view?usp=sharing",
+            description: "Ranked among the top 5 teams nationally in software engineering and algorithmic challenge."
+        },
+        {
+            title: "Semi-Finalist - EY Techathon 6.0",
+            issuer: "Ernst & Young (EY)",
+            date: "National Level",
+            certificateLink: "https://drive.google.com/file/d/1L2GFdBcMk9PJp_x5NhR2ma_ZC0UryFWI/view?usp=sharing",
+            description: "Advanced to national semi-finals in EY's flagship engineering competition for innovative AI architecture."
+        }
+    ]
+};
+
+// Render Functions
+function renderEducation() {
+    const container = document.getElementById('educationCards');
+    if (!container) return;
+    
+    container.innerHTML = portfolioData.education.map(item => `
+        <div class="bg-punjabiBlue-card border border-slate-800 hover:border-saffron/50 rounded-2xl p-6 transition-all hover:-translate-y-1 shadow-lg md:col-span-2">
+            <div class="flex justify-between items-start mb-3 flex-wrap gap-2">
+                <span class="text-xs font-semibold text-saffron bg-saffron/10 px-3 py-1 rounded-full border border-saffron/30">${item.period}</span>
+                <span class="text-xs font-bold text-mustard bg-mustard/10 px-3 py-1 rounded-full border border-mustard/30">${item.score}</span>
+            </div>
+            <h3 class="text-xl font-bold text-white mb-1">${item.degree}</h3>
+            <div class="text-slate-400 text-sm mb-4"><i class="fa-solid fa-university text-saffron/70 mr-2"></i>${item.institution}</div>
+            <p class="text-slate-300 text-sm leading-relaxed">${item.description}</p>
+        </div>
+    `).join('');
+}
+
+function renderExperience() {
+    const container = document.getElementById('experienceTimeline');
+    if (!container) return;
+
+    container.innerHTML = portfolioData.experience.map(item => `
+        <div class="relative group">
+            <div class="absolute -left-[31px] md:-left-[47px] top-1.5 w-5 h-5 rounded-full bg-saffron border-4 border-punjabiBlue group-hover:scale-125 transition-transform"></div>
+            <div class="bg-punjabiBlue-card border border-slate-800 hover:border-saffron/50 rounded-2xl p-6 transition-all shadow-lg">
+                <div class="flex flex-wrap justify-between items-start gap-2 mb-2">
+                    <div>
+                        <div class="flex items-center gap-3 flex-wrap">
+                            <h3 class="text-xl font-bold text-white">${item.role}</h3>
+                            ${item.githubLink ? `
+                                <a href="${item.githubLink}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-xs text-saffron hover:text-mustard transition-colors font-semibold border border-saffron/30 bg-saffron/10 px-2.5 py-1 rounded-lg hover:border-saffron">
+                                    <i class="fa-brands fa-github text-sm"></i> View PRs <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+                                </a>
+                            ` : ''}
+                        </div>
+                        <div class="text-saffron font-semibold text-sm mt-0.5">${item.company}${item.location ? ` • <span class="text-slate-400 font-normal">${item.location}</span>` : ''}</div>
+                    </div>
+                    ${item.period ? `<span class="text-xs font-semibold text-mustard bg-mustard/10 px-3 py-1 rounded-full border border-mustard/30">${item.period}</span>` : ''}
+                </div>
+                <ul class="list-disc list-inside space-y-2 text-slate-300 text-sm mt-4 leading-relaxed">
+                    ${item.points.map(pt => `<li>${pt}</li>`).join('')}
+                </ul>
+            </div>
+        </div>
+    `).join('');
+}
+
+function renderProjects() {
+    const container = document.getElementById('projectsGrid');
+    if (!container) return;
+
+    container.innerHTML = portfolioData.projects.map(proj => `
+        <div class="bg-punjabiBlue-card border border-slate-800 hover:border-saffron/60 rounded-2xl p-6 flex flex-col justify-between transition-all hover:-translate-y-2 shadow-xl group">
+            <div>
+                <div class="text-xs font-bold uppercase tracking-widest text-saffron mb-2">${proj.category}</div>
+                <h3 class="text-2xl font-bold text-white group-hover:text-mustard transition-colors mb-3">${proj.title}</h3>
+                <p class="text-slate-300 text-sm mb-6 leading-relaxed">${proj.description}</p>
+                <div class="flex flex-wrap gap-2 mb-6">
+                    ${proj.tech.map(t => `<span class="text-xs bg-punjabiBlue text-slate-300 border border-slate-700 px-2.5 py-1 rounded-md">${t}</span>`).join('')}
+                </div>
+            </div>
+            <div class="flex items-center justify-end border-t border-slate-800 pt-4 relative z-20">
+                ${proj.githubLink ? `
+                    <a href="${proj.githubLink}" target="_blank" rel="noopener noreferrer" class="text-saffron hover:text-mustard transition-colors text-sm font-bold flex items-center gap-1.5 cursor-pointer ml-auto">
+                        <i class="fa-brands fa-github text-base"></i> View Code <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
+                    </a>
+                ` : ''}
+                ${proj.liveLink ? `
+                    <a href="${proj.liveLink}" target="_blank" rel="noopener noreferrer" class="text-saffron hover:text-mustard transition-colors text-sm font-bold flex items-center gap-1.5 cursor-pointer ml-auto">
+                        Live Demo <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
+                    </a>
+                ` : ''}
+            </div>
+        </div>
+    `).join('');
+}
+
+function renderSkills() {
+    const container = document.getElementById('skillsContainer');
+    if (!container) return;
+
+    container.innerHTML = portfolioData.skills.map(sk => `
+        <div class="bg-punjabiBlue-card border border-slate-800 hover:border-saffron/40 rounded-2xl p-6 shadow-lg">
+            <div class="flex items-center gap-3 mb-6 border-b border-slate-800 pb-3">
+                <div class="w-10 h-10 rounded-lg bg-saffron/10 border border-saffron/30 text-saffron flex items-center justify-center text-lg">
+                    <i class="fa-solid ${sk.icon}"></i>
+                </div>
+                <h3 class="text-lg font-bold text-white">${sk.category}</h3>
+            </div>
+            <div class="flex flex-wrap gap-2">
+                ${sk.items.map(item => `
+                    <span class="bg-punjabiBlue text-slate-200 border border-slate-700/80 hover:border-saffron/60 px-3 py-1.5 rounded-lg text-sm transition-all hover:bg-saffron/10">
+                        ${item}
+                    </span>
+                `).join('')}
+            </div>
+        </div>
+    `).join('');
+}
+
+function renderAchievements() {
+    const container = document.getElementById('achievementsGrid');
+    if (!container) return;
+
+    container.innerHTML = portfolioData.achievements.map(ach => `
+        <div class="bg-punjabiBlue-card border border-slate-800 hover:border-mustard/50 rounded-2xl p-6 transition-all hover:-translate-y-1 shadow-lg flex flex-col justify-between">
+            <div>
+                <div class="flex items-center justify-between gap-3 mb-4">
+                    <div class="w-10 h-10 rounded-full bg-mustard/10 border border-mustard/30 text-mustard flex items-center justify-center text-lg font-bold">
+                        <i class="fa-solid fa-trophy"></i>
+                    </div>
+                    ${ach.certificateLink ? `
+                        <a href="${ach.certificateLink}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-xs text-saffron hover:text-mustard transition-colors font-bold border border-saffron/30 bg-saffron/10 px-3 py-1.5 rounded-xl hover:border-saffron shadow-sm cursor-pointer">
+                            <i class="fa-solid fa-award"></i> Certificate <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+                        </a>
+                    ` : ''}
+                </div>
+                <h3 class="text-lg font-bold text-white mb-1">${ach.title}</h3>
+                <div class="text-xs text-saffron font-semibold mb-3">${ach.issuer} • ${ach.date}</div>
+                <p class="text-slate-300 text-sm leading-relaxed">${ach.description}</p>
+            </div>
+        </div>
+    `).join('');
+}
+
+// Initialize all renders immediately and on DOM load
+function initAllRenders() {
+    renderEducation();
+    renderExperience();
+    renderProjects();
+    renderSkills();
+    renderAchievements();
+}
+
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initAllRenders);
+} else {
+    initAllRenders();
+}

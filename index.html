@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mandeep Singh | Software Developer & Engineer</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>☬</text></svg>">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Mukta+Mahee:wght@500;600;700;800&family=Noto+Sans+Gurmukhi:wght@500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,800;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        saffron: { DEFAULT: '#FF6B00', dark: '#E05D00', light: '#FF8833' },
+                        gold: { DEFAULT: '#F59E0B', light: '#FBBF24' },
+                        punjabiBlue: {
+                            DEFAULT: '#142042',
+                            card: '#182752',
+                            light: '#233875'
+                        },
+                        darkBg: '#0A1128'
+                    },
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                        serif: ['"Playfair Display"', 'serif'],
+                        gurmukhi: ['"Noto Sans Gurmukhi"', '"Mukta Mahee"', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- GSAP & ScrollTrigger CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+    <!-- Custom Modern CSS with cache buster -->
+    <link rel="stylesheet" href="css/styles.css?v=8.0">
+</head>
+<body class="bg-[#0A1128] text-slate-100 overflow-x-hidden selection:bg-saffron selection:text-white min-h-screen relative">
+
+    <!-- AMBIENT VIBRANT AESTHETIC GLOW ORBS -->
+    <div class="ambient-glow ambient-glow-1"></div>
+    <div class="ambient-glow ambient-glow-2"></div>
+    <div class="ambient-glow ambient-glow-3"></div>
+
+    <!-- MAIN SCROLL CONTAINER & GATE WRAPPER -->
+    <div id="gateWrapper" class="relative min-h-screen">
+
+        <!-- MODERN STYLISH 3D ROYAL GATE OVERLAY -->
+        <div id="royalGate" class="fixed inset-0 w-full h-screen z-40 flex items-center justify-center overflow-hidden pointer-events-none">
+            
+            <!-- LEFT 3D DOOR PANEL -->
+            <div id="gateLeft" class="pointer-events-auto absolute left-0 top-0 w-1/2 h-full flex flex-col justify-between p-8 md:p-14">
+                <div class="flex items-center justify-between text-saffron/60 border-b border-white/10 pb-4">
+                    <span class="font-gurmukhi text-lg tracking-widest text-gold font-bold">ਮੰਦੀਪ ਸਿੰਘ</span>
+                    <span class="text-xs uppercase tracking-widest text-slate-500">01 / EST. 2026</span>
+                </div>
+                
+                <div class="self-end my-auto flex flex-col items-center gap-4 pr-2 md:pr-6">
+                    <div class="w-10 h-10 md:w-14 md:h-14 rounded-2xl bg-gradient-to-br from-gold via-saffron to-amber-700 border border-gold/40 shadow-2xl flex items-center justify-center text-slate-950 font-bold text-xl cursor-pointer hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-key"></i>
+                    </div>
+                </div>
+
+                <div class="text-[10px] text-slate-500 uppercase tracking-widest font-mono">Modern Portal • Wing L</div>
+            </div>
+
+            <!-- RIGHT 3D DOOR PANEL -->
+            <div id="gateRight" class="pointer-events-auto absolute right-0 top-0 w-1/2 h-full flex flex-col justify-between p-8 md:p-14">
+                <div class="flex items-center justify-between text-saffron/60 border-b border-white/10 pb-4">
+                    <span class="text-xs uppercase tracking-widest text-slate-500">MANDEEP SINGH</span>
+                    <span class="text-xs uppercase tracking-widest text-slate-500">02 / PORTAL</span>
+                </div>
+
+                <div class="self-start my-auto flex flex-col items-center gap-4 pl-2 md:pl-6">
+                    <div class="w-10 h-10 md:w-14 md:h-14 rounded-2xl bg-gradient-to-br from-gold via-saffron to-amber-700 border border-gold/40 shadow-2xl flex items-center justify-center text-slate-950 font-bold text-xl cursor-pointer hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-key"></i>
+                    </div>
+                </div>
+
+                <div class="text-right text-[10px] text-slate-500 uppercase tracking-widest font-mono">Modern Portal • Wing R</div>
+            </div>
+
+            <!-- OPENING BANNER: SAT SHRI AKAAL (SHOWS AT TOP WHEN GATE IS CLOSED INITIALLY) -->
+            <div id="gateCenterContent" class="pointer-events-auto relative z-50 text-center max-w-xl px-8 py-10 glass-card rounded-3xl border border-white/10 shadow-[0_0_80px_rgba(255,107,0,0.15)] transition-opacity duration-300 mx-4">
+                <div class="inline-flex items-center gap-2 bg-saffron/10 border border-saffron/30 text-saffron text-xs font-semibold px-4 py-1.5 rounded-full mb-6 tracking-wide">
+                    <span class="w-2 h-2 rounded-full bg-saffron animate-pulse"></span>
+                    <span>Welcome • ਜੀ ਆਇਆਂ ਨੂੰ</span>
+                </div>
+
+                <div class="space-y-2 mb-8">
+                    <h1 class="text-4xl md:text-6xl font-extrabold font-gurmukhi text-saffron drop-shadow-[0_4px_24px_rgba(255,107,0,0.4)] py-2 leading-relaxed tracking-normal">
+                        ਸਤਿ ਸ਼੍ਰੀ ਅਕਾਲ
+                    </h1>
+                    <h2 class="text-lg md:text-2xl font-bold tracking-widest text-slate-200">
+                        SAT SHRI AKAAL
+                    </h2>
+                </div>
+
+                <div class="border-t border-white/10 pt-6 mb-8 space-y-1">
+                    <p class="text-xl md:text-3xl font-bold text-white font-sans tracking-tight">
+                        Hi, I am <span class="text-transparent bg-clip-text bg-gradient-to-r from-saffron to-gold">Mandeep Singh</span>
+                    </p>
+                    <p class="text-slate-400 text-xs md:text-sm font-normal">
+                        Generative AI Engineer & Full Stack Developer
+                    </p>
+                </div>
+
+                <button id="enterGateBtn" class="w-full bg-gradient-to-r from-saffron via-saffron-light to-gold text-slate-950 font-extrabold px-8 py-3.5 rounded-2xl shadow-lg hover:shadow-saffron/30 transition-all transform hover:-translate-y-0.5 active:translate-y-0 flex items-center justify-center gap-3 text-sm tracking-wide">
+                    <i class="fa-solid fa-arrow-down text-base"></i>
+                    <span>Enter Portfolio (Open 3D Gate)</span>
+                </button>
+
+                <div class="mt-6 flex items-center justify-center gap-2 text-slate-400 text-xs animate-bounce">
+                    <span>Scroll down to open gate</span>
+                </div>
+            </div>
+
+            <!-- CLOSING BANNER: DHANWAAD JI (APPEARS ON CLOSED GATE DOORS AT BOTTOM) -->
+            <div id="closingGateCenterContent" class="absolute z-50 text-center max-w-xl px-8 py-10 glass-card rounded-3xl border border-white/10 shadow-[0_0_80px_rgba(255,107,0,0.2)] opacity-0 pointer-events-none transition-all duration-500 scale-95 mx-4">
+                <div class="inline-flex items-center gap-2 bg-saffron/10 border border-saffron/30 text-saffron text-xs font-semibold px-4 py-1.5 rounded-full mb-4 tracking-wide">
+                    <span>Farewell • ਧੰਨਵਾਦ • Thank You</span>
+                </div>
+
+                <div class="space-y-2 mb-8">
+                    <h2 class="text-4xl md:text-6xl font-extrabold font-gurmukhi text-saffron drop-shadow-[0_4px_24px_rgba(255,107,0,0.4)] py-2 leading-relaxed tracking-normal">
+                        ਧੰਨਵਾਦ ਜੀ
+                    </h2>
+                    <h3 class="text-lg md:text-2xl font-bold tracking-widest text-white">
+                        THANK YOU
+                    </h3>
+                </div>
+
+                <button id="closingReopenBtn" class="w-full bg-gradient-to-r from-saffron to-gold text-slate-950 font-extrabold px-8 py-3.5 rounded-2xl shadow-lg transition-all hover:scale-105 flex items-center justify-center gap-2 text-sm tracking-wide">
+                    <i class="fa-solid fa-arrow-up text-base"></i>
+                    <span>Back to Top & Re-Open Gate</span>
+                </button>
+            </div>
+
+        </div>
+
+
+        <!-- INSIDE PORTFOLIO CONTENT CONTAINER -->
+        <main id="portfolioContent" class="relative z-10 pt-[100vh] pb-24 px-4 md:px-12 max-w-6xl mx-auto space-y-28 md:space-y-36">
+
+            <!-- HERO INTRO INSIDE -->
+            <section id="hero" class="text-center pt-8 space-y-6 relative">
+                <div class="inline-flex items-center gap-2.5 px-5 py-2.5 rounded-full text-xs font-bold text-saffron bg-saffron/10 border border-saffron/30 shadow-[0_0_25px_rgba(255,107,0,0.25)] backdrop-blur-md">
+                    <i class="fa-solid fa-wand-magic-sparkles text-gold animate-spin" style="animation-duration: 4s;"></i>
+                    <span>Building Next-Gen Agentic AI &amp; Intelligent Software</span>
+                </div>
+                <h1 class="text-4xl sm:text-5xl md:text-7xl font-extrabold text-white tracking-tight leading-[1.12] max-w-5xl mx-auto">
+                    Engineering Intelligent AI Systems &amp; <span class="text-gradient-vibrant drop-shadow-[0_0_35px_rgba(255,107,0,0.35)]">Scalable Web Platforms</span>
+                </h1>
+                <p class="max-w-3xl mx-auto text-slate-300 text-base md:text-lg font-normal leading-relaxed">
+                    B.Tech CSE-AIML Engineer specializing in Generative AI, Agentic Workflows, Multi-Modal RAG Pipelines, and Full Stack Architecture.
+                </p>
+                <div class="flex flex-wrap items-center justify-center gap-5 pt-4">
+                    <a href="#projects" class="bg-gradient-to-r from-saffron via-saffron-light to-gold text-slate-950 font-extrabold px-8 py-3.5 rounded-2xl shadow-[0_0_30px_rgba(255,107,0,0.35)] hover:shadow-[0_0_45px_rgba(255,107,0,0.6)] transition-all hover:scale-105 text-sm flex items-center gap-2.5">
+                        <i class="fa-solid fa-rocket"></i> View Projects
+                    </a>
+                    <a href="#contact" class="glass-card text-white font-bold px-8 py-3.5 rounded-2xl transition-all hover:scale-105 text-sm flex items-center gap-2.5 border border-white/20 hover:border-saffron hover:text-saffron shadow-lg">
+                        <i class="fa-solid fa-paper-plane text-saffron"></i> Contact Me
+                    </a>
+                </div>
+            </section>
+
+            <!-- 1. EDUCATION SECTION -->
+            <section id="education" class="scroll-mt-24 space-y-8">
+                <div class="flex items-center gap-4 border-b border-white/10 pb-4">
+                    <div class="w-12 h-12 rounded-2xl bg-gradient-to-br from-saffron/20 to-gold/20 text-saffron flex items-center justify-center text-xl font-bold border border-saffron/30 shadow-[0_0_20px_rgba(255,107,0,0.25)]">
+                        <i class="fa-solid fa-graduation-cap"></i>
+                    </div>
+                    <div>
+                        <h2 class="text-2xl md:text-3xl font-bold text-white">Education & Academics</h2>
+                        <p class="text-slate-400 text-xs">Formal engineering background & qualifications</p>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6" id="educationCards">
+                    <div class="bg-punjabiBlue-card border border-slate-800 hover:border-saffron/50 rounded-2xl p-6 transition-all hover:-translate-y-1 shadow-lg md:col-span-2">
+                        <div class="flex justify-between items-start mb-3 flex-wrap gap-2">
+                            <span class="text-xs font-semibold text-saffron bg-saffron/10 px-3 py-1 rounded-full border border-saffron/30">2024 - 2028</span>
+                            <span class="text-xs font-bold text-mustard bg-mustard/10 px-3 py-1 rounded-full border border-mustard/30">CGPA: 8.5 / 10.0</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-1">B.Tech in Computer Science & Engineering (AIML)</h3>
+                        <div class="text-slate-400 text-sm mb-4"><i class="fa-solid fa-university text-saffron/70 mr-2"></i>Guru Tegh Bahadur Institute Of Technology (GTBIT), New Delhi, India</div>
+                        <p class="text-slate-300 text-sm leading-relaxed">Specializing in Artificial Intelligence, Machine Learning, Deep Learning, Data Structures & Algorithms, Neural Networks, and Software Architecture.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 2. EXPERIENCE SECTION -->
+            <section id="experience" class="scroll-mt-24 space-y-8">
+                <div class="flex items-center gap-4 border-b border-white/10 pb-4">
+                    <div class="w-12 h-12 rounded-2xl bg-gradient-to-br from-gold/20 to-amber-500/20 text-gold flex items-center justify-center text-xl font-bold border border-gold/30 shadow-[0_0_20px_rgba(245,158,11,0.25)]">
+                        <i class="fa-solid fa-briefcase"></i>
+                    </div>
+                    <div>
+                        <h2 class="text-2xl md:text-3xl font-bold text-white">Work Experience & Open Source</h2>
+                        <p class="text-slate-400 text-xs">AI engineering, industry internships & open source contributions</p>
+                    </div>
+                </div>
+
+                <div class="relative border-l border-saffron/30 ml-4 md:ml-6 space-y-8 pl-6 md:pl-10" id="experienceTimeline">
+                    <div class="relative group">
+                        <div class="absolute -left-[31px] md:-left-[47px] top-1.5 w-5 h-5 rounded-full bg-saffron border-4 border-punjabiBlue group-hover:scale-125 transition-transform"></div>
+                        <div class="bg-punjabiBlue-card border border-slate-800 hover:border-saffron/50 rounded-2xl p-6 transition-all shadow-lg">
+                            <div class="flex flex-wrap justify-between items-start gap-2 mb-2">
+                                <div>
+                                    <h3 class="text-xl font-bold text-white">Generative AI Engineer Intern</h3>
+                                    <div class="text-saffron font-semibold text-sm">LawVriksh</div>
+                                </div>
+                                <span class="text-xs font-semibold text-mustard bg-mustard/10 px-3 py-1 rounded-full border border-mustard/30">February 2026 – Present</span>
+                            </div>
+                            <ul class="list-disc list-inside space-y-2 text-slate-300 text-sm mt-4 leading-relaxed">
+                                <li>Developed a Neural text transformation service preserving Markdown structure via sentence-level chunking and reconstruction, with both REST and gRPC interfaces.</li>
+                                <li>Engineered a rephraser pipeline using Groq LLM and plagiarism-check integration, reducing plagiarism scores from 90% to 0% in 2.47s with automated safe fallback logic.</li>
+                                <li>Engineered Context Router Pipeline using intelligent orchestration to dynamically integrate multi-section document context, enhancing the quality of AI-generated legal arguments.</li>
+                                <li>Built AI Humanizer service leveraging LLMs to naturalize generated legal content, improving readability and user engagement.</li>
+                                <li>Engineered a production-grade Citation Engine using Python/FastAPI and InLegalBERT, implementing semantic search and real-time verification of legal sources.</li>
+                                <li>Developed an interactive Citation Map to visualize complex legal relationships, building the testing interface in React with NLP-based extraction and dynamic SVG rendering.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="relative group">
+                        <div class="absolute -left-[31px] md:-left-[47px] top-1.5 w-5 h-5 rounded-full bg-saffron border-4 border-punjabiBlue group-hover:scale-125 transition-transform"></div>
+                        <div class="bg-punjabiBlue-card border border-slate-800 hover:border-saffron/50 rounded-2xl p-6 transition-all shadow-lg">
+                            <div class="flex flex-wrap justify-between items-start gap-2 mb-2">
+                                <div>
+                                    <div class="flex items-center gap-3 flex-wrap">
+                                        <h3 class="text-xl font-bold text-white">Open Source Contributor</h3>
+                                        <a href="https://github.com/kornia/kornia/pulls?q=is%3Apr+is%3Aclosed+author%3Amandeepsingh2007" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-xs text-saffron hover:text-mustard transition-colors font-semibold border border-saffron/30 bg-saffron/10 px-2.5 py-1 rounded-lg hover:border-saffron">
+                                            <i class="fa-brands fa-github text-sm"></i> View PRs <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+                                        </a>
+                                    </div>
+                                    <div class="text-saffron font-semibold text-sm mt-0.5">Kornia Geometric Computer Vision (Spatial AI)</div>
+                                </div>
+                            </div>
+                            <ul class="list-disc list-inside space-y-2 text-slate-300 text-sm mt-4 leading-relaxed">
+                                <li>Contributed Naflex feature for SigLIP2 model, successfully merged PR enhancing vision-language capabilities.</li>
+                                <li>Developing native PyTorch implementation of PaliGemma model with Hugging Face weight loading support stored in Supabase.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 3. PROJECTS SECTION -->
+            <section id="projects" class="scroll-mt-24 space-y-8">
+                <div class="flex items-center gap-4 border-b border-white/10 pb-4">
+                    <div class="w-12 h-12 rounded-2xl bg-gradient-to-br from-saffron/20 to-amber-500/20 text-saffron flex items-center justify-center text-xl font-bold border border-saffron/30 shadow-[0_0_20px_rgba(255,107,0,0.25)]">
+                        <i class="fa-solid fa-laptop-code"></i>
+                    </div>
+                    <div>
+                        <h2 class="text-2xl md:text-3xl font-bold text-white">Featured Projects</h2>
+                        <p class="text-slate-400 text-xs">Agentic AI systems, RAG pipelines & full stack platforms</p>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="projectsGrid">
+                    <!-- Project 1: VEXA (First) -->
+                    <div class="bg-punjabiBlue-card border border-slate-800 hover:border-saffron/60 rounded-2xl p-6 flex flex-col justify-between transition-all hover:-translate-y-2 shadow-xl group">
+                        <div>
+                            <div class="text-xs font-bold uppercase tracking-widest text-saffron mb-2">Agentic AI & Telemetry</div>
+                            <h3 class="text-2xl font-bold text-white group-hover:text-mustard transition-colors mb-3">VEXA - Vehicle Health System</h3>
+                            <p class="text-slate-300 text-sm mb-6 leading-relaxed">Multi-role real-time vehicle telemetry and fleet analytics platform powered by multi-agent AI (UEBA Security, Scheduling, Voice Call Agent) and natural language failure root-cause analysis.</p>
+                            <div class="flex flex-wrap gap-2 mb-6">
+                                <span class="text-xs bg-punjabiBlue text-slate-300 border border-slate-700 px-2.5 py-1 rounded-md">React.js</span>
+                                <span class="text-xs bg-punjabiBlue text-slate-300 border border-slate-700 px-2.5 py-1 rounded-md">FastAPI</span>
+                                <span class="text-xs bg-punjabiBlue text-slate-300 border border-slate-700 px-2.5 py-1 rounded-md">LangChain</span>
+                                <span class="text-xs bg-punjabiBlue text-slate-300 border border-slate-700 px-2.5 py-1 rounded-md">OmniDimension</span>
+                                <span class="text-xs bg-punjabiBlue text-slate-300 border border-slate-700 px-2.5 py-1 rounded-md">Vector Search</span>
+                                <span class="text-xs bg-punjabiBlue text-slate-300 border border-slate-700 px-2.5 py-1 rounded-md">Python</span>
+                            </div>
+                        </div>
+                        <div class="flex items-center justify-end border-t border-slate-800 pt-4 relative z-20">
+                            <a href="https://youtu.be/_G5IjEPWOuI?si=Fi5HTDLCe-sD5y9l" target="_blank" rel="noopener noreferrer" class="text-saffron hover:text-mustard transition-colors text-sm font-bold flex items-center gap-1.5 cursor-pointer ml-auto">
+                                Live Demo <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Project 2: Multi-Modal Doc Intelligence (Second - Code Only) -->
+                    <div class="bg-punjabiBlue-card border border-slate-800 hover:border-saffron/60 rounded-2xl p-6 flex flex-col justify-between transition-all hover:-translate-y-2 shadow-xl group">
+                        <div>
+                            <div class="text-xs font-bold uppercase tracking-widest text-saffron mb-2">GenAI & Agentic Systems</div>
+                            <h3 class="text-2xl font-bold text-white group-hover:text-mustard transition-colors mb-3">Multi-Modal Doc Intelligence</h3>
+                            <p class="text-slate-300 text-sm mb-6 leading-relaxed">4-Agent cross-modal document intelligence pipeline (Vision, Text, Fusion, Validation) with Qdrant VectorDB RAG achieving 92% extraction accuracy and reducing processing time by 85%.</p>
+                            <div class="flex flex-wrap gap-2 mb-6">
+                                <span class="text-xs bg-punjabiBlue text-slate-300 border border-slate-700 px-2.5 py-1 rounded-md">Python</span>
+                                <span class="text-xs bg-punjabiBlue text-slate-300 border border-slate-700 px-2.5 py-1 rounded-md">FastAPI</span>
+                                <span class="text-xs bg-punjabiBlue text-slate-300 border border-slate-700 px-2.5 py-1 rounded-md">YOLO</span>
+                                <span class="text-xs bg-punjabiBlue text-slate-300 border border-slate-700 px-2.5 py-1 rounded-md">EasyOCR</span>
+                                <span class="text-xs bg-punjabiBlue text-slate-300 border border-slate-700 px-2.5 py-1 rounded-md">LangChain</span>
+                                <span class="text-xs bg-punjabiBlue text-slate-300 border border-slate-700 px-2.5 py-1 rounded-md">Qdrant VectorDB</span>
+                                <span class="text-xs bg-punjabiBlue text-slate-300 border border-slate-700 px-2.5 py-1 rounded-md">GPT-4o</span>
+                            </div>
+                        </div>
+                        <div class="flex items-center justify-end border-t border-slate-800 pt-4 relative z-20">
+                            <a href="https://github.com/mandeepsingh2007/Multi-Modal-Document-Intelligence-System" target="_blank" rel="noopener noreferrer" class="text-saffron hover:text-mustard transition-colors text-sm font-bold flex items-center gap-1.5 cursor-pointer ml-auto">
+                                <i class="fa-brands fa-github text-base"></i> View Code <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Project 3: Vyapaar Saathi (Live Demo Only) -->
+                    <div class="bg-punjabiBlue-card border border-slate-800 hover:border-saffron/60 rounded-2xl p-6 flex flex-col justify-between transition-all hover:-translate-y-2 shadow-xl group">
+                        <div>
+                            <div class="text-xs font-bold uppercase tracking-widest text-saffron mb-2">Conversational AI & FinTech</div>
+                            <h3 class="text-2xl font-bold text-white group-hover:text-mustard transition-colors mb-3">Vyapaar Saathi - WhatsApp AI</h3>
+                            <p class="text-slate-300 text-sm mb-6 leading-relaxed">Conversational AI on WhatsApp delivering business intelligence, hyper-local supplier discovery, ML-based predictive inventory, and automated sales/expense bookkeeping empowering 70%+ microentrepreneurs.</p>
+                            <div class="flex flex-wrap gap-2 mb-6">
+                                <span class="text-xs bg-punjabiBlue text-slate-300 border border-slate-700 px-2.5 py-1 rounded-md">WhatsApp API</span>
+                                <span class="text-xs bg-punjabiBlue text-slate-300 border border-slate-700 px-2.5 py-1 rounded-md">NLP</span>
+                                <span class="text-xs bg-punjabiBlue text-slate-300 border border-slate-700 px-2.5 py-1 rounded-md">DuckDuckGo API</span>
+                                <span class="text-xs bg-punjabiBlue text-slate-300 border border-slate-700 px-2.5 py-1 rounded-md">Google Maps API</span>
+                                <span class="text-xs bg-punjabiBlue text-slate-300 border border-slate-700 px-2.5 py-1 rounded-md">ML Inventory</span>
+                                <span class="text-xs bg-punjabiBlue text-slate-300 border border-slate-700 px-2.5 py-1 rounded-md">Node.js</span>
+                            </div>
+                        </div>
+                        <div class="flex items-center justify-end border-t border-slate-800 pt-4 relative z-20">
+                            <a href="https://youtu.be/jtcB_SQLVqs?si=0M6QoCyClcxt37Ex" target="_blank" rel="noopener noreferrer" class="text-saffron hover:text-mustard transition-colors text-sm font-bold flex items-center gap-1.5 cursor-pointer ml-auto">
+                                Live Demo <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Project 4: GeoVara (Live Demo Only) -->
+                    <div class="bg-punjabiBlue-card border border-slate-800 hover:border-saffron/60 rounded-2xl p-6 flex flex-col justify-between transition-all hover:-translate-y-2 shadow-xl group">
+                        <div>
+                            <div class="text-xs font-bold uppercase tracking-widest text-saffron mb-2">IoT & Deep Learning / Early Warning</div>
+                            <h3 class="text-2xl font-bold text-white group-hover:text-mustard transition-colors mb-3">GeoVara - Rockfall Prediction</h3>
+                            <p class="text-slate-300 text-sm mb-6 leading-relaxed">Offline-capable IoT monitoring system using ESP32 and LoRaWAN mesh network with CNN+LSTM risk prediction from geotechnical sensors and drone imagery, triggering real-time SMS alerts via Twilio.</p>
+                            <div class="flex flex-wrap gap-2 mb-6">
+                                <span class="text-xs bg-punjabiBlue text-slate-300 border border-slate-700 px-2.5 py-1 rounded-md">ESP32</span>
+                                <span class="text-xs bg-punjabiBlue text-slate-300 border border-slate-700 px-2.5 py-1 rounded-md">LoRaWAN</span>
+                                <span class="text-xs bg-punjabiBlue text-slate-300 border border-slate-700 px-2.5 py-1 rounded-md">FastAPI</span>
+                                <span class="text-xs bg-punjabiBlue text-slate-300 border border-slate-700 px-2.5 py-1 rounded-md">Node.js</span>
+                                <span class="text-xs bg-punjabiBlue text-slate-300 border border-slate-700 px-2.5 py-1 rounded-md">MQTT</span>
+                                <span class="text-xs bg-punjabiBlue text-slate-300 border border-slate-700 px-2.5 py-1 rounded-md">CNN+LSTM</span>
+                                <span class="text-xs bg-punjabiBlue text-slate-300 border border-slate-700 px-2.5 py-1 rounded-md">Twilio API</span>
+                                <span class="text-xs bg-punjabiBlue text-slate-300 border border-slate-700 px-2.5 py-1 rounded-md">React.js</span>
+                            </div>
+                        </div>
+                        <div class="flex items-center justify-end border-t border-slate-800 pt-4 relative z-20">
+                            <a href="https://youtu.be/U8hIvzPX-8w?si=xPDuIq-WrpOW9YcH" target="_blank" rel="noopener noreferrer" class="text-saffron hover:text-mustard transition-colors text-sm font-bold flex items-center gap-1.5 cursor-pointer ml-auto">
+                                Live Demo <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Project 5: Fixera (Live Demo Only - Last) -->
+                    <div class="bg-punjabiBlue-card border border-slate-800 hover:border-saffron/60 rounded-2xl p-6 flex flex-col justify-between transition-all hover:-translate-y-2 shadow-xl group">
+                        <div>
+                            <div class="text-xs font-bold uppercase tracking-widest text-saffron mb-2">Full Stack / AI Platform</div>
+                            <h3 class="text-2xl font-bold text-white group-hover:text-mustard transition-colors mb-3">Fixera - Bug Bounty Platform</h3>
+                            <p class="text-slate-300 text-sm mb-6 leading-relaxed">Full-stack bug bounty and wallet platform with automated PR verification via GitHub Webhooks, ML-based fair pricing engine, and automated UPI payouts cutting manual verification effort to zero.</p>
+                            <div class="flex flex-wrap gap-2 mb-6">
+                                <span class="text-xs bg-punjabiBlue text-slate-300 border border-slate-700 px-2.5 py-1 rounded-md">React.js</span>
+                                <span class="text-xs bg-punjabiBlue text-slate-300 border border-slate-700 px-2.5 py-1 rounded-md">Node.js</span>
+                                <span class="text-xs bg-punjabiBlue text-slate-300 border border-slate-700 px-2.5 py-1 rounded-md">Express</span>
+                                <span class="text-xs bg-punjabiBlue text-slate-300 border border-slate-700 px-2.5 py-1 rounded-md">MongoDB</span>
+                                <span class="text-xs bg-punjabiBlue text-slate-300 border border-slate-700 px-2.5 py-1 rounded-md">GitHub Webhooks</span>
+                                <span class="text-xs bg-punjabiBlue text-slate-300 border border-slate-700 px-2.5 py-1 rounded-md">ML Models</span>
+                                <span class="text-xs bg-punjabiBlue text-slate-300 border border-slate-700 px-2.5 py-1 rounded-md">UPI Wallet</span>
+                            </div>
+                        </div>
+                        <div class="flex items-center justify-end border-t border-slate-800 pt-4 relative z-20">
+                            <a href="https://youtu.be/GJ-MzKwy1pQ?si=WJGwqrJNRoLayF59" target="_blank" rel="noopener noreferrer" class="text-saffron hover:text-mustard transition-colors text-sm font-bold flex items-center gap-1.5 cursor-pointer ml-auto">
+                                Live Demo <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 4. SKILLS SECTION -->
+            <section id="skills" class="scroll-mt-24 space-y-8">
+                <div class="flex items-center gap-4 border-b border-white/10 pb-4">
+                    <div class="w-12 h-12 rounded-2xl bg-gradient-to-br from-cyan-500/20 to-blue-600/20 text-cyan-400 flex items-center justify-center text-xl font-bold border border-cyan-500/30 shadow-[0_0_20px_rgba(56,189,248,0.25)]">
+                        <i class="fa-solid fa-layer-group"></i>
+                    </div>
+                    <div>
+                        <h2 class="text-2xl md:text-3xl font-bold text-white">Technical Skills</h2>
+                        <p class="text-slate-400 text-xs">GenAI frameworks, LLM integrations, full stack & tools</p>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6" id="skillsContainer">
+                    <div class="bg-punjabiBlue-card border border-slate-800 hover:border-saffron/40 rounded-2xl p-6 shadow-lg">
+                        <div class="flex items-center gap-3 mb-6 border-b border-slate-800 pb-3">
+                            <div class="w-10 h-10 rounded-lg bg-saffron/10 border border-saffron/30 text-saffron flex items-center justify-center text-lg">
+                                <i class="fa-solid fa-brain"></i>
+                            </div>
+                            <h3 class="text-lg font-bold text-white">AIML</h3>
+                        </div>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-punjabiBlue text-slate-200 border border-slate-700/80 hover:border-saffron/60 px-3 py-1.5 rounded-lg text-sm transition-all hover:bg-saffron/10">RAG Pipelines</span>
+                            <span class="bg-punjabiBlue text-slate-200 border border-slate-700/80 hover:border-saffron/60 px-3 py-1.5 rounded-lg text-sm transition-all hover:bg-saffron/10">LLM Integrations</span>
+                            <span class="bg-punjabiBlue text-slate-200 border border-slate-700/80 hover:border-saffron/60 px-3 py-1.5 rounded-lg text-sm transition-all hover:bg-saffron/10">LangChain</span>
+                            <span class="bg-punjabiBlue text-slate-200 border border-slate-700/80 hover:border-saffron/60 px-3 py-1.5 rounded-lg text-sm transition-all hover:bg-saffron/10">Agentic AI</span>
+                            <span class="bg-punjabiBlue text-slate-200 border border-slate-700/80 hover:border-saffron/60 px-3 py-1.5 rounded-lg text-sm transition-all hover:bg-saffron/10">NLP</span>
+                            <span class="bg-punjabiBlue text-slate-200 border border-slate-700/80 hover:border-saffron/60 px-3 py-1.5 rounded-lg text-sm transition-all hover:bg-saffron/10">Deep Learning</span>
+                            <span class="bg-punjabiBlue text-slate-200 border border-slate-700/80 hover:border-saffron/60 px-3 py-1.5 rounded-lg text-sm transition-all hover:bg-saffron/10">Qdrant VectorDB</span>
+                            <span class="bg-punjabiBlue text-slate-200 border border-slate-700/80 hover:border-saffron/60 px-3 py-1.5 rounded-lg text-sm transition-all hover:bg-saffron/10">PyTorch</span>
+                        </div>
+                    </div>
+
+                    <div class="bg-punjabiBlue-card border border-slate-800 hover:border-saffron/40 rounded-2xl p-6 shadow-lg">
+                        <div class="flex items-center gap-3 mb-6 border-b border-slate-800 pb-3">
+                            <div class="w-10 h-10 rounded-lg bg-saffron/10 border border-saffron/30 text-saffron flex items-center justify-center text-lg">
+                                <i class="fa-solid fa-layer-group"></i>
+                            </div>
+                            <h3 class="text-lg font-bold text-white">Full Stack Web Development</h3>
+                        </div>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-punjabiBlue text-slate-200 border border-slate-700/80 hover:border-saffron/60 px-3 py-1.5 rounded-lg text-sm transition-all hover:bg-saffron/10">React.js</span>
+                            <span class="bg-punjabiBlue text-slate-200 border border-slate-700/80 hover:border-saffron/60 px-3 py-1.5 rounded-lg text-sm transition-all hover:bg-saffron/10">FastAPI</span>
+                            <span class="bg-punjabiBlue text-slate-200 border border-slate-700/80 hover:border-saffron/60 px-3 py-1.5 rounded-lg text-sm transition-all hover:bg-saffron/10">Node.js</span>
+                            <span class="bg-punjabiBlue text-slate-200 border border-slate-700/80 hover:border-saffron/60 px-3 py-1.5 rounded-lg text-sm transition-all hover:bg-saffron/10">Express.js</span>
+                            <span class="bg-punjabiBlue text-slate-200 border border-slate-700/80 hover:border-saffron/60 px-3 py-1.5 rounded-lg text-sm transition-all hover:bg-saffron/10">MongoDB</span>
+                            <span class="bg-punjabiBlue text-slate-200 border border-slate-700/80 hover:border-saffron/60 px-3 py-1.5 rounded-lg text-sm transition-all hover:bg-saffron/10">REST APIs</span>
+                            <span class="bg-punjabiBlue text-slate-200 border border-slate-700/80 hover:border-saffron/60 px-3 py-1.5 rounded-lg text-sm transition-all hover:bg-saffron/10">gRPC</span>
+                            <span class="bg-punjabiBlue text-slate-200 border border-slate-700/80 hover:border-saffron/60 px-3 py-1.5 rounded-lg text-sm transition-all hover:bg-saffron/10">Git & GitHub</span>
+                        </div>
+                    </div>
+
+                    <div class="bg-punjabiBlue-card border border-slate-800 hover:border-saffron/40 rounded-2xl p-6 shadow-lg">
+                        <div class="flex items-center gap-3 mb-6 border-b border-slate-800 pb-3">
+                            <div class="w-10 h-10 rounded-lg bg-saffron/10 border border-saffron/30 text-saffron flex items-center justify-center text-lg">
+                                <i class="fa-solid fa-code"></i>
+                            </div>
+                            <h3 class="text-lg font-bold text-white">Programming Languages</h3>
+                        </div>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-punjabiBlue text-slate-200 border border-slate-700/80 hover:border-saffron/60 px-4 py-2 rounded-xl text-base font-semibold transition-all hover:bg-saffron/10 text-saffron">Python</span>
+                            <span class="bg-punjabiBlue text-slate-200 border border-slate-700/80 hover:border-saffron/60 px-4 py-2 rounded-xl text-base font-semibold transition-all hover:bg-saffron/10 text-mustard">Java</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 5. ACHIEVEMENTS SECTION -->
+            <section id="achievements" class="scroll-mt-24 space-y-8">
+                <div class="flex items-center gap-4 border-b border-white/10 pb-4">
+                    <div class="w-12 h-12 rounded-2xl bg-gradient-to-br from-gold/20 to-amber-500/20 text-gold flex items-center justify-center text-xl font-bold border border-gold/30 shadow-[0_0_20px_rgba(245,158,11,0.25)]">
+                        <i class="fa-solid fa-trophy"></i>
+                    </div>
+                    <div>
+                        <h2 class="text-2xl md:text-3xl font-bold text-white">Achievements & Honors</h2>
+                        <p class="text-slate-400 text-xs">National hackathons, competitive programming & challenges</p>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6" id="achievementsGrid">
+                    <div class="bg-punjabiBlue-card border border-slate-800 hover:border-mustard/50 rounded-2xl p-6 transition-all hover:-translate-y-1 shadow-lg flex flex-col justify-between">
+                        <div>
+                            <div class="flex items-center justify-between gap-3 mb-4">
+                                <div class="w-10 h-10 rounded-full bg-mustard/10 border border-mustard/30 text-mustard flex items-center justify-center text-lg font-bold">
+                                    <i class="fa-solid fa-trophy"></i>
+                                </div>
+                                <a href="https://drive.google.com/file/d/1t_yzxqm-P2ADb_kMnnZ9oqs8D7mCUp1v/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-xs text-saffron hover:text-mustard transition-colors font-bold border border-saffron/30 bg-saffron/10 px-3 py-1.5 rounded-xl hover:border-saffron shadow-sm cursor-pointer">
+                                    <i class="fa-solid fa-award"></i> Certificate <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+                                </a>
+                            </div>
+                            <h3 class="text-lg font-bold text-white mb-1">State Level (Top 500) - OpenAI Buildathon</h3>
+                            <div class="text-xs text-saffron font-semibold mb-3">OpenAI & NxtWave • National Challenge</div>
+                            <p class="text-slate-300 text-sm leading-relaxed">Selected in Top 500 state level out of 70,000+ national participants for building advanced Generative AI applications.</p>
+                        </div>
+                    </div>
+
+                    <div class="bg-punjabiBlue-card border border-slate-800 hover:border-mustard/50 rounded-2xl p-6 transition-all hover:-translate-y-1 shadow-lg flex flex-col justify-between">
+                        <div>
+                            <div class="flex items-center justify-between gap-3 mb-4">
+                                <div class="w-10 h-10 rounded-full bg-mustard/10 border border-mustard/30 text-mustard flex items-center justify-center text-lg font-bold">
+                                    <i class="fa-solid fa-code"></i>
+                                </div>
+                            </div>
+                            <h3 class="text-lg font-bold text-white mb-1">140+ Problems Solved on LeetCode & Codeforces</h3>
+                            <div class="text-xs text-saffron font-semibold mb-3">Competitive Programming • Ongoing</div>
+                            <p class="text-slate-300 text-sm leading-relaxed">Consistent problem solving in Data Structures, Algorithms, Dynamic Programming, and Graph algorithms.</p>
+                        </div>
+                    </div>
+
+                    <div class="bg-punjabiBlue-card border border-slate-800 hover:border-mustard/50 rounded-2xl p-6 transition-all hover:-translate-y-1 shadow-lg flex flex-col justify-between">
+                        <div>
+                            <div class="flex items-center justify-between gap-3 mb-4">
+                                <div class="w-10 h-10 rounded-full bg-mustard/10 border border-mustard/30 text-mustard flex items-center justify-center text-lg font-bold">
+                                    <i class="fa-solid fa-award"></i>
+                                </div>
+                                <a href="https://drive.google.com/file/d/1XEdgXy543vLv--OZ4BdLzYUG-wNRIZci/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-xs text-saffron hover:text-mustard transition-colors font-bold border border-saffron/30 bg-saffron/10 px-3 py-1.5 rounded-xl hover:border-saffron shadow-sm cursor-pointer">
+                                    <i class="fa-solid fa-award"></i> Certificate <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+                                </a>
+                            </div>
+                            <h3 class="text-lg font-bold text-white mb-1">3rd Place - Hack7Days Hackathon</h3>
+                            <div class="text-xs text-saffron font-semibold mb-3">Hack7Days Challenge • Hackathon Win</div>
+                            <p class="text-slate-300 text-sm leading-relaxed">Secured 3rd position for developing a high-impact full-stack AI platform during an intensive 7-day sprint.</p>
+                        </div>
+                    </div>
+
+                    <div class="bg-punjabiBlue-card border border-slate-800 hover:border-mustard/50 rounded-2xl p-6 transition-all hover:-translate-y-1 shadow-lg flex flex-col justify-between">
+                        <div>
+                            <div class="flex items-center justify-between gap-3 mb-4">
+                                <div class="w-10 h-10 rounded-full bg-mustard/10 border border-mustard/30 text-mustard flex items-center justify-center text-lg font-bold">
+                                    <i class="fa-solid fa-star"></i>
+                                </div>
+                                <a href="https://drive.google.com/file/d/1tWMH9-aDO_zE_lxggC_xpYZb4tBHlFXj/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-xs text-saffron hover:text-mustard transition-colors font-bold border border-saffron/30 bg-saffron/10 px-3 py-1.5 rounded-xl hover:border-saffron shadow-sm cursor-pointer">
+                                    <i class="fa-solid fa-award"></i> Certificate <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+                                </a>
+                            </div>
+                            <h3 class="text-lg font-bold text-white mb-1">Top 5 Finalist - Code With DCG</h3>
+                            <div class="text-xs text-saffron font-semibold mb-3">Code With DCG • Finalist</div>
+                            <p class="text-slate-300 text-sm leading-relaxed">Ranked among the top 5 teams nationally in software engineering and algorithmic challenge.</p>
+                        </div>
+                    </div>
+
+                    <div class="bg-punjabiBlue-card border border-slate-800 hover:border-mustard/50 rounded-2xl p-6 transition-all hover:-translate-y-1 shadow-lg flex flex-col justify-between">
+                        <div>
+                            <div class="flex items-center justify-between gap-3 mb-4">
+                                <div class="w-10 h-10 rounded-full bg-mustard/10 border border-mustard/30 text-mustard flex items-center justify-center text-lg font-bold">
+                                    <i class="fa-solid fa-medal"></i>
+                                </div>
+                                <a href="https://drive.google.com/file/d/1L2GFdBcMk9PJp_x5NhR2ma_ZC0UryFWI/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-xs text-saffron hover:text-mustard transition-colors font-bold border border-saffron/30 bg-saffron/10 px-3 py-1.5 rounded-xl hover:border-saffron shadow-sm cursor-pointer">
+                                    <i class="fa-solid fa-award"></i> Certificate <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+                                </a>
+                            </div>
+                            <h3 class="text-lg font-bold text-white mb-1">Semi-Finalist - EY Techathon 6.0</h3>
+                            <div class="text-xs text-saffron font-semibold mb-3">Ernst & Young (EY) • National Level</div>
+                            <p class="text-slate-300 text-sm leading-relaxed">Advanced to national semi-finals in EY's flagship engineering competition for innovative AI architecture.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 6. CONTACT SECTION (CLOSES THE GATE AT THE END) -->
+            <section id="contact" class="scroll-mt-24 space-y-8 pt-6">
+                <div class="flex items-center gap-4 border-b border-white/10 pb-4">
+                    <div class="w-12 h-12 rounded-2xl bg-gradient-to-br from-saffron/20 to-gold/20 text-saffron flex items-center justify-center text-xl font-bold border border-saffron/30 shadow-[0_0_20px_rgba(255,107,0,0.25)]">
+                        <i class="fa-solid fa-paper-plane"></i>
+                    </div>
+                    <div>
+                        <h2 class="text-2xl md:text-3xl font-bold text-white">Get In Touch</h2>
+                        <p class="text-slate-400 text-xs">Let's discuss opportunities, GenAI projects or collaborations</p>
+                    </div>
+                </div>
+
+                <div class="glass-card rounded-3xl p-8 md:p-12 border border-white/10 max-w-4xl mx-auto space-y-8">
+                    <div class="space-y-3">
+                        <h3 class="text-2xl md:text-3xl font-bold text-white">Let's Build Something Great</h3>
+                        <p class="text-slate-300 text-sm leading-relaxed max-w-2xl">
+                            Have an exciting AI project, internship/full-time opportunity, or want to collaborate on innovative tech? Let's connect!
+                        </p>
+                    </div>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 pt-2">
+                        <div class="flex items-center gap-4 text-slate-300 bg-punjabiBlue-card border border-slate-800 p-5 rounded-2xl">
+                            <div class="w-11 h-11 rounded-xl bg-saffron/10 border border-saffron/20 text-saffron flex items-center justify-center text-lg shrink-0">
+                                <i class="fa-solid fa-envelope"></i>
+                            </div>
+                            <div class="overflow-hidden">
+                                <div class="text-[10px] uppercase tracking-wider text-slate-500 font-semibold">Email</div>
+                                <a href="mailto:singh.mandeeep2007@gmail.com" class="font-medium text-sm text-white hover:text-saffron transition-colors truncate block">singh.mandeeep2007@gmail.com</a>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center gap-4 text-slate-300 bg-punjabiBlue-card border border-slate-800 p-5 rounded-2xl">
+                            <div class="w-11 h-11 rounded-xl bg-saffron/10 border border-saffron/20 text-saffron flex items-center justify-center text-lg shrink-0">
+                                <i class="fa-solid fa-location-dot"></i>
+                            </div>
+                            <div>
+                                <div class="text-[10px] uppercase tracking-wider text-slate-500 font-semibold">Location</div>
+                                <div class="font-medium text-sm text-white">New Delhi, India</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="pt-6 border-t border-white/10 flex flex-wrap items-center justify-between gap-4">
+                        <span class="text-xs uppercase tracking-widest text-slate-400 font-semibold">Connect on Social Platforms:</span>
+                        <div class="flex flex-wrap items-center gap-3">
+                            <a href="https://github.com/mandeepsingh2007" target="_blank" rel="noopener noreferrer" title="GitHub" class="flex items-center gap-2.5 px-5 py-3 rounded-2xl glass-card text-white hover:text-saffron hover:border-saffron transition-all border border-white/10 font-semibold text-sm hover:scale-105 shadow-md">
+                                <i class="fa-brands fa-github text-lg"></i>
+                                <span>GitHub</span>
+                            </a>
+                            <a href="https://www.linkedin.com/in/mandeep-singh-48248a31b/" target="_blank" rel="noopener noreferrer" title="LinkedIn" class="flex items-center gap-2.5 px-5 py-3 rounded-2xl glass-card text-white hover:text-saffron hover:border-saffron transition-all border border-white/10 font-semibold text-sm hover:scale-105 shadow-md">
+                                <i class="fa-brands fa-linkedin text-lg text-[#0A66C2]"></i>
+                                <span>LinkedIn</span>
+                            </a>
+                            <a href="https://leetcode.com/u/mandeepsingh1401/" target="_blank" rel="noopener noreferrer" title="LeetCode" class="flex items-center gap-2.5 px-5 py-3 rounded-2xl glass-card text-white hover:text-mustard hover:border-mustard transition-all border border-white/10 font-semibold text-sm hover:scale-105 shadow-md">
+                                <svg class="w-5 h-5 fill-[#FFA116]" viewBox="0 0 24 24" role="img" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M13.483 0a1.374 1.374 0 0 0-.961.438L7.116 6.226l-3.854 4.126a5.266 5.266 0 0 0-1.209 2.104 5.35 5.35 0 0 0-.125.513 5.527 5.527 0 0 0 .062 2.362 5.83 5.83 0 0 0 .349 1.017 5.938 5.938 0 0 0 1.271 1.818l4.277 4.193.039.038c2.248 2.165 5.852 2.133 8.063-.074l2.396-2.392c.54-.54.54-1.414.003-1.955a1.378 1.378 0 0 0-1.951-.003l-2.396 2.392a3.021 3.021 0 0 1-4.205.038l-.02-.019-4.276-4.193c-.652-.64-.972-1.469-.948-2.263a2.68 2.68 0 0 1 .066-.523 2.545 2.545 0 0 1 .619-1.164L9.13 8.114c1.058-1.134 3.204-1.27 4.43-.278l3.501 2.831c.593.48 1.461.387 1.94-.207a1.384 1.384 0 0 0-.207-1.943l-3.5-2.831c-.8-.647-1.766-1.045-2.774-1.202l2.015-2.158A1.384 1.384 0 0 0 13.483 0zm-2.866 12.815a1.38 1.38 0 0 0-1.38 1.382 1.38 1.38 0 0 0 1.38 1.382H20.79a1.38 1.38 0 0 0 1.38-1.382 1.38 1.38 0 0 0-1.38-1.382z"/>
+                                </svg>
+                                <span>LeetCode</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- TRIGGER SECTION FOR GATE CLOSING -->
+            <div id="closingBanner" class="py-12 text-center text-slate-500 text-xs font-mono tracking-widest uppercase">
+                End of Portfolio • Gate Closing Area
+            </div>
+        </main>
+
+        <footer class="bg-[#0A1128]/90 border-t border-white/10 text-center py-6 text-xs text-slate-400 relative z-20 backdrop-blur-md">
+            <p>© 2026 Mandeep Singh • Generative AI & Full Stack Developer Portfolio</p>
+        </footer>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/content.js?v=8.0"></script>
+    <script src="js/audio.js?v=8.0"></script>
+    <script src="js/gate.js?v=8.0"></script>
+    <script src="js/main.js?v=8.0"></script>
+</body>
+</html>
