@@ -6,7 +6,7 @@
 const portfolioData = {
     education: [
         {
-            degree: "B.Tech in Computer Science & Engineering (AIML)",
+            degree: "B.Tech in Computer Science & Engineering (Specialization in AIML)",
             institution: "Guru Tegh Bahadur Institute Of Technology (GTBIT), New Delhi, India",
             period: "2024 - 2028",
             score: "CGPA: 8.5 / 10.0",
@@ -16,10 +16,29 @@ const portfolioData = {
 
     experience: [
         {
+            role: "Research Intern",
+            company: "Indian Institute of Science, Bengaluru",
+            subtext: "Computational Intelligence Lab (CiNT), Department of Aerospace, under Dr. SN Omkar",
+            period: "August 2026 – September 2026",
+            location: "",
+            demoLink: "https://omnix-learning.onrender.com/reset?course=probability",
+            githubLink: "https://github.com/mandeepsingh2007/Omnix--AI-enabled-learning",
+            points: [
+                "Built OmniX, an adaptive tutor for Class 12 Probability (NCERT ch. 13) and Differential Equations. Every student action is treated as evidence; the next activity is chosen from that, not from a fixed playlist.",
+                "Mapped both courses as a prerequisite DAG. A node stays locked until BKT mastery reaches 0.90, so later topics cannot be opened while the prerequisite is still weak.",
+                "Combined Bayesian Knowledge Tracing (per concept) with IRT 3PL and EAP ability θ (per course). Checkpoints and free-text recall use a low guess rate; MCQ quizzes sit higher, because guessing is easier there.",
+                "Instrumented video checkpoints, a lesson-aware assistant, micro-quizzes, games, simulations, and active recall (SM-2 / Ebbinghaus). Only right/wrong verdicts move mastery. Simulation exploration is logged but ungraded, so fiddling cannot inflate the score.",
+                "Re-hosted third-party games/sims and injected a telemetry bridge so iframe clicks become structured events without rewriting those pages. Socket.IO live signal feed shows each attempt as it happens.",
+                "Used Groq to grade free-text, classify questions, generate recall prompts, and write a short learner profile (strengths and misconceptions)."
+            ]
+        },
+        {
             role: "Generative AI Engineer Intern",
             company: "LawVriksh",
             period: "February 2026 – Present",
             location: "",
+            githubLink: "https://github.com/Law-Vriksh/lv-ai-service/pulls?q=is%3Apr+author%3Amandeepsingh2007+is%3Aclosed",
+            buttonLabel: "View PRs",
             points: [
                 "Developed a Neural text transformation service preserving Markdown structure via sentence-level chunking and reconstruction, with both REST and gRPC interfaces.",
                 "Engineered a rephraser pipeline using Groq LLM and plagiarism-check integration, reducing plagiarism scores from 90% to 0% in 2.47s with automated safe fallback logic.",
@@ -166,13 +185,21 @@ function renderExperience() {
                     <div>
                         <div class="flex items-center gap-3 flex-wrap">
                             <h3 class="text-xl font-bold text-white">${item.role}</h3>
-                            ${item.githubLink ? `
-                                <a href="${item.githubLink}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-xs text-saffron hover:text-mustard transition-colors font-semibold border border-saffron/30 bg-saffron/10 px-2.5 py-1 rounded-lg hover:border-saffron">
-                                    <i class="fa-brands fa-github text-sm"></i> View PRs <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
-                                </a>
-                            ` : ''}
+                            <div class="flex items-center gap-2 flex-wrap">
+                                ${item.demoLink ? `
+                                    <a href="${item.demoLink}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-xs text-saffron hover:text-mustard transition-colors font-bold border border-saffron/30 bg-saffron/10 px-3 py-1 rounded-lg hover:border-saffron shadow-sm cursor-pointer">
+                                        <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i> Live Demo
+                                    </a>
+                                ` : ''}
+                                ${item.githubLink ? `
+                                    <a href="${item.githubLink}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-xs text-saffron hover:text-mustard transition-colors font-bold border border-saffron/30 bg-saffron/10 px-3 py-1 rounded-lg hover:border-saffron shadow-sm cursor-pointer">
+                                        <i class="fa-brands fa-github text-sm"></i> ${item.buttonLabel || (item.role === 'Research Intern' ? 'View Code' : 'View PRs')} <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+                                    </a>
+                                ` : ''}
+                            </div>
                         </div>
-                        <div class="text-saffron font-semibold text-sm mt-0.5">${item.company}${item.location ? ` • <span class="text-slate-400 font-normal">${item.location}</span>` : ''}</div>
+                        <div class="text-saffron font-semibold text-sm mt-1">${item.company}${item.location ? ` • <span class="text-slate-400 font-normal">${item.location}</span>` : ''}</div>
+                        ${item.subtext ? `<div class="text-slate-400 text-xs mt-0.5">${item.subtext}</div>` : ''}
                     </div>
                     ${item.period ? `<span class="text-xs font-semibold text-mustard bg-mustard/10 px-3 py-1 rounded-full border border-mustard/30">${item.period}</span>` : ''}
                 </div>
