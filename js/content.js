@@ -65,8 +65,9 @@ const portfolioData = {
             category: "Freelance Client Deliverable",
             tag: "EdTech & Multi-School Examination Portal",
             subtitle: "Developed for Multi-School K-12 Curriculum • Grounded AI Question Paper Generation & Auto-Evaluation System",
+            highlight: "30+ schools are using this portal across Delhi, Punjab, Himachal Pradesh, and currently expanding to more schools.",
             tech: ["Google Gemini AI", "Multimodal RAG", "Python & FastAPI", "React.js", "Curriculum PDF Grounding", "Automated Grading Engine", "Dynamic PDF & Answer Key Export"],
-            liveLink: "https://youtu.be/ZeFpGmxHXF8",
+            liveLink: "https://youtu.be/dEqA_jqhKbk",
             points: [
                 "<strong>Multi-Subject Curriculum Grounding:</strong> Ingests official Class 1 Semester 1 textbooks across English, Mathematics, Computer Science, General Knowledge (GK), and EVS. Enables educators to configure chapters, grade parameters, and question distribution to dynamically synthesize fresh, non-repetitive examination papers powered by Google Gemini.",
                 "<strong>Zero-Hallucination Textbook Grounding:</strong> Implements strict contextual anchoring over parsed textbook PDF content, preventing external web hallucinations and ensuring all generated questions and grading criteria adhere 100% to approved school syllabus material.",
@@ -93,6 +94,7 @@ const portfolioData = {
             category: "Agentic AI & Telemetry Platform",
             tech: ["React.js", "FastAPI", "LangChain", "OmniDimension API", "Vector Search", "Python"],
             description: "Multi-role real-time vehicle telemetry and fleet analytics platform powered by multi-agent AI (UEBA Security, Scheduling, Voice Call Agent) and natural language failure root-cause analysis.",
+            highlight: "5+ automotive stations are currently using this in my locality.",
             liveLink: "https://youtu.be/_G5IjEPWOuI?si=Fi5HTDLCe-sD5y9l"
         },
         {
@@ -107,13 +109,15 @@ const portfolioData = {
             category: "Conversational AI & FinTech",
             tech: ["WhatsApp API", "NLP", "DuckDuckGo API", "Google Maps API", "ML Inventory", "Node.js", "Python"],
             description: "Conversational AI on WhatsApp delivering business intelligence, hyper-local supplier discovery, ML-based predictive inventory, and automated sales/expense bookkeeping empowering 70%+ microentrepreneurs.",
-            liveLink: "https://youtu.be/jtcB_SQLVqs?si=0M6QoCyClcxt37Ex"
+            highlight: "15+ kirana/grocery stores are using this in my locality & currently expanding to more shops/stores.",
+            liveLink: "https://youtu.be/UGA3GZ1kYDg"
         },
         {
             title: "GeoVara - AI Rockfall Prediction & Alert System",
             category: "IoT & Deep Learning / Early Warning",
             tech: ["ESP32", "LoRaWAN", "FastAPI", "Node.js", "MongoDB", "MQTT", "CNN+LSTM", "Twilio API", "React.js"],
             description: "Offline-capable IoT monitoring system using ESP32 and LoRaWAN mesh network with CNN+LSTM risk prediction from geotechnical sensors and drone imagery, triggering real-time SMS alerts via Twilio.",
+            highlight: "Pitched in front of the Ministry of Mines.",
             liveLink: "https://youtu.be/U8hIvzPX-8w?si=xPDuIq-WrpOW9YcH"
         },
         {
@@ -247,6 +251,11 @@ function renderProjects() {
         <div class="bg-punjabiBlue-card border border-slate-800 hover:border-saffron/60 rounded-2xl p-6 flex flex-col justify-between transition-all hover:-translate-y-2 shadow-xl group">
             <div>
                 <div class="text-xs font-bold uppercase tracking-widest text-saffron mb-2">${proj.category}</div>
+                ${proj.highlight ? `
+                    <div class="mb-3 px-3 py-2 rounded-xl border border-saffron/40 bg-saffron/10 text-saffron text-xs font-semibold leading-snug">
+                        ${proj.highlight}
+                    </div>
+                ` : ''}
                 <h3 class="text-2xl font-bold text-white group-hover:text-mustard transition-colors mb-3">${proj.title}</h3>
                 <p class="text-slate-300 text-sm mb-6 leading-relaxed">${proj.description}</p>
                 <div class="flex flex-wrap gap-2 mb-6">
@@ -357,6 +366,12 @@ function renderFreelance() {
                         ` : ''}
                     </div>
                 </div>
+
+                ${item.highlight ? `
+                    <div class="mb-5 px-3.5 py-2.5 rounded-xl border border-saffron/40 bg-saffron/10 text-saffron text-sm font-semibold leading-snug">
+                        <i class="fa-solid fa-school mr-1.5"></i>${item.highlight}
+                    </div>
+                ` : ''}
 
                 <div class="flex flex-wrap gap-2 mb-6">
                     ${item.tech.map(t => `<span class="text-xs bg-punjabiBlue text-slate-300 border border-slate-700 px-2.5 py-1 rounded-md">${t}</span>`).join('')}
