@@ -4,16 +4,6 @@
  */
 
 const portfolioData = {
-    education: [
-        {
-            degree: "B.Tech in Computer Science & Engineering (Specialization in AIML)",
-            institution: "Guru Tegh Bahadur Institute Of Technology (GTBIT), New Delhi, India",
-            period: "2024 - 2028",
-            score: "CGPA: 8.5 / 10.0",
-            description: "Specializing in Artificial Intelligence, Machine Learning, Deep Learning, Data Structures & Algorithms, Neural Networks, and Software Architecture."
-        }
-    ],
-
     experience: [
         {
             role: "Research Intern",
@@ -188,23 +178,6 @@ const portfolioData = {
 };
 
 // Render Functions
-function renderEducation() {
-    const container = document.getElementById('educationCards');
-    if (!container) return;
-    
-    container.innerHTML = portfolioData.education.map(item => `
-        <div class="bg-punjabiBlue-card border border-slate-800 hover:border-saffron/50 rounded-2xl p-6 transition-all hover:-translate-y-1 shadow-lg md:col-span-2">
-            <div class="flex justify-between items-start mb-3 flex-wrap gap-2">
-                <span class="text-xs font-semibold text-saffron bg-saffron/10 px-3 py-1 rounded-full border border-saffron/30">${item.period}</span>
-                <span class="text-xs font-bold text-mustard bg-mustard/10 px-3 py-1 rounded-full border border-mustard/30">${item.score}</span>
-            </div>
-            <h3 class="text-xl font-bold text-white mb-1">${item.degree}</h3>
-            <div class="text-slate-400 text-sm mb-4"><i class="fa-solid fa-university text-saffron/70 mr-2"></i>${item.institution}</div>
-            <p class="text-slate-300 text-sm leading-relaxed">${item.description}</p>
-        </div>
-    `).join('');
-}
-
 function renderExperience() {
     const container = document.getElementById('experienceTimeline');
     if (!container) return;
@@ -401,7 +374,6 @@ function renderFreelance() {
 
 // Initialize all renders immediately and on DOM load
 function initAllRenders() {
-    renderEducation();
     renderExperience();
     renderFreelance();
     renderProjects();
